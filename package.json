@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec ts-node backend/server.ts"
+    "dev": "nodemon --exec ts-node backend/server.ts",
+    "build": "ng build",   
+    "start": "ng serve"
   },
   "keywords": [],
   "author": "",
