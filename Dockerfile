@@ -7,5 +7,8 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+# Expose port (default for Express apps is 3000, change if needed)
+EXPOSE 5200
+
 # Run the web service on container startup.
 CMD ["node", "dist/server.js"]
