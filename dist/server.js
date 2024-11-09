@@ -42,6 +42,9 @@ if (!ATLAS_URI) {
     .then(() => {
     const app = (0, express_1.default)();
     app.use((0, cors_1.default)());
+    //app.use(cors({
+    //  origin: 'https://rgemployeemanagement.netlify.app' // Netlify app domain
+    //}));
     app.use("/employees", employee_routes_1.employeeRouter);
     // start the Express server
     app.listen(5200, () => {
