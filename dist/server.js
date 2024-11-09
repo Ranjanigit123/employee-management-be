@@ -26,6 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//server.ts
 const dotenv = __importStar(require("dotenv"));
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
@@ -42,13 +43,14 @@ if (!ATLAS_URI) {
     .then(() => {
     const app = (0, express_1.default)();
     app.use((0, cors_1.default)());
-    //app.use(cors({
-    //  origin: 'https://rgemployeemanagement.netlify.app' // Netlify app domain
-    //}));
     app.use("/employees", employee_routes_1.employeeRouter);
     // start the Express server
-    app.listen(5200, () => {
-        console.log(`Server running at http://localhost:5200...`);
+    const port = process.env.PORT || 5200;
+    app.listen(port, () => {
+        console.log(`Server running at http://localhost:${port}...`);
     });
+    //app.listen(5200, () => {
+    // console.log(`Server running at http://localhost:5200...`);
+    //});
 })
     .catch((error) => console.error(error));

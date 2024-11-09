@@ -33,6 +33,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.employeeRouter = void 0;
+//employee.routes.ts
 const express = __importStar(require("express"));
 const mongodb_1 = require("mongodb");
 const database_1 = require("./database");

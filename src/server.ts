@@ -1,3 +1,4 @@
+//server.ts
 import * as dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
@@ -19,16 +20,18 @@ if (!ATLAS_URI) {
 connectToDatabase(ATLAS_URI)
   .then(() => {
     const app = express();
-    //app.use(cors());
-    app.use(cors({
-      origin: 'https://Ranjanigit123.github.io/employee-management-fe/',  // Replace with your frontend's domain
-    }));
+    app.use(cors());
+     
      
     app.use("/employees", employeeRouter);
 
     // start the Express server
-    app.listen(5200, () => {
-      console.log(`Server running at http://localhost:5200...`);
-    });
+    const port = process.env.PORT || 5200;
+    app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}...`);
+    } );
+    //app.listen(5200, () => {
+     // console.log(`Server running at http://localhost:5200...`);
+    //});
   })
   .catch((error) => console.error(error));
