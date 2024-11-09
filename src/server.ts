@@ -21,7 +21,7 @@ connectToDatabase(ATLAS_URI)
     const app = express();
     //app.use(cors());
     app.use(cors({
-      origin: 'https://your-frontend-domain.com',  // Replace with your frontend's domain
+      origin: 'https://Ranjanigit123.github.io/employee-management-fe/',  // Replace with your frontend's domain
     }));
      
     app.use("/employees", employeeRouter);
