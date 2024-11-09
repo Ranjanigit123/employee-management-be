@@ -19,11 +19,11 @@ if (!ATLAS_URI) {
 connectToDatabase(ATLAS_URI)
   .then(() => {
     const app = express();
-    //app.use(cors());
-    app.use(cors({
-      origin: 'https://rgemployeemanagement.netlify.app/', // Replace with your actual Netlify URL
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    }));
+    app.use(cors());
+    //app.use(cors({
+      //origin: 'https://rgemployeemanagement.netlify.app/', // Replace with your actual Netlify URL
+      //methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    //}));
     //app.use(cors({
     //  origin: 'https://rgemployeemanagement.netlify.app' // Netlify app domain
     //}));
